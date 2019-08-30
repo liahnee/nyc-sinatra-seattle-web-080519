@@ -1,6 +1,40 @@
-<h2>Create New Landmark</h2>
+# <!DOCTYPE html>
+# <html>
+#     <head>
+#         <style type="text/css">
+#             body { text-align:center;font-family:helvetica,arial font-size:22px; color:#888;margin:20px}
+#             #c {margin:0 auto;width:500px;text-align:left}
+#         </style>
+#     </head>
 
-<!-- add content here -->
+#     <body>
+#         <h2>Create New Landmark</h2>
 
-<a class="button" href="/landmarks">Landmarks</a>
-<a class="button" href="/">Home</a>
+#         <!-- add content here -->
+#         <form action="landmarks/new" method="post">
+#             <label for="landmark_name">Landmark Name: </label>
+#                 <input id="landmark_name" type="text" name="landmark[name]">
+#             <label for="year_completed">Year Completed: </label>
+#                 <input id="year_completed" type="integer" name="landmark[year_completed]">
+#             <label for="figure_name">Figure: </label>
+
+
+#             <% Figure.all.map do |each| %>
+#                 <input type="checkbox" name="figure_name" value=
+#                 <%= each.id %>> <%= each.name %><br/>
+#             <% end %>
+            
+
+        
+#         </form>
+        
+        
+#         <a class="button" href="/landmarks">Landmarks</a>
+#         <a class="button" href="/">Home</a>
+
+
+
+
+
+#     </body>
+# </html>

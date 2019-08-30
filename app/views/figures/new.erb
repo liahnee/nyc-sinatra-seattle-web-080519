@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style type="text/css">
+            body { text-align:center;font-family:helvetica,arial font-size:22px; color:#888;margin:20px}
+            #c {margin:0 auto;width:500px;text-align:left}
+        </style>
+    </head>
+
+    <body>
+        <h2>Create New Figure</h2>
+
+        <form action="/figures" method="post">
+            <label for="figure">Figure </label>
+                <input id="figure_name" type="text" name="figure[name]"> 
+
+            <label for="title">Title </label>
+            <% Title.all.each do |title| %>
+                <input type="checkbox" id="title_ids" name="figure[title_ids][]" value="<% title.id %>"> <%= title.name %>
+            <% end %>
+
+            <label for="title">Add New Title </label>
+                <input id="title_name" type="text" name="title[name]">
+                
+            <label for="landmark">Landmark </label>
+                <% Landmark.all.each do |land| %>
+                    <input type="checkbox" id="landmark_ids" name="figure[landmark_ids][]" value="<% land.id %>"> <%= land.name %>
+                <% end %>
+
+            <label for="landmark">Add New Landmark </label>
+                <input id="landmark_name" type="text" name="landmark[name]">
+            
+                <input type="submit" value="Submit">
+        </form>        
+        
+        <a class="button" href="/landmarks">Landmarks</a>
+        <a class="button" href="/">Home</a>
+
+    </body>
+</html>
